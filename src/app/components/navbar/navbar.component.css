@@ -35,3 +35,27 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+
+@media (max-width: 768px) {
+    .header {
+        display: block;;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+}

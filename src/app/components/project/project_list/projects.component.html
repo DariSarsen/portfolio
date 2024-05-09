@@ -1,0 +1,33 @@
+<h1>Projects</h1>
+
+
+<div class="projects">
+  <div class="section" *ngFor="let project of projects">
+      <div>
+        <div class="project-name">
+          {{ project.title }}
+          <div class="small">
+            {{ project.subtitle }}
+          </div>
+        </div>
+  
+        <div class="description">{{ project.description }}</div>
+      </div>
+
+
+      <div class="swiper">
+        <swiper-container
+        autoplay-delay="2000" 
+        effect="fade" 
+        navigation-prevEl='.swiper-button-prev' 
+        navigation-nextEl='.swiper-button-next'
+        >
+          <swiper-slide *ngFor="let imageName of project.imageUrls" >
+            <img src="http://localhost:3000/{{ imageName }}" alt="project image">
+          </swiper-slide>
+         
+        </swiper-container>
+      </div>
+       
+  </div>
+</div>
