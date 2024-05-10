@@ -3,7 +3,7 @@ import { catchError } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ToastrService } from 'ngx-toastr';
 import { PhotoUploadService } from '../../../services/photo-upload.service';
 import { ProjectService } from '../../../services/project.service';
 
@@ -18,12 +18,12 @@ export class AddformprojectComponent {
   newProject: any = { title: '', description: '', subtitle: ''};
   selectedImages: File[] = [];
 
-  constructor(private projectService: ProjectService, private photoUploadService: PhotoUploadService) { }
+  constructor(private projectService: ProjectService, private toastr: ToastrService, private photoUploadService: PhotoUploadService) { }
 
   addProject(): void {
     // Проверяем, выбрано ли хотя бы одно изображение
     if (this.selectedImages.length === 0) {
-      console.error('No images selected');
+      this.toastr.error('No images selected');
       return;
     }
 
@@ -42,6 +42,7 @@ export class AddformprojectComponent {
     this.photoUploadService.uploadPhotos(this.selectedImages)
       .pipe(
         catchError((error) => {
+          this.toastr.error(error.error.message, 'Error uploading images');
           console.error('Error uploading images:', error);
           throw error; 
         })
@@ -49,18 +50,18 @@ export class AddformprojectComponent {
       .subscribe((response) => {
         // Получаем массив путей к загруженным изображениям и сохраняем его в объекте проекта
         this.newProject.imageUrls = response.imagePaths;
-        console.log(this.newProject);
         
         // Вызываем метод сервиса для добавления проекта
         this.projectService.addProject(this.newProject)
           .pipe(
             catchError((error) => {
+              this.toastr.error(error.error.message, 'Error adding project');
               console.error('Error adding project:', error);
               throw error; 
             })
           )
           .subscribe(() => {
-            console.log('Project added successfully');
+            this.toastr.success('Project added successfully');
             // Очищаем форму и выбранные изображения
             this.newProject = { title: '', description: '', subtitle: ''};
             this.selectedImages = [];

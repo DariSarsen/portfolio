@@ -42,7 +42,11 @@ h1{
   align-self: center;
 }
 
-
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
 
 img{
   width: 100%;

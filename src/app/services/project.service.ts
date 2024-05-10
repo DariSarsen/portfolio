@@ -7,7 +7,6 @@ import { Observable, Subject, tap } from 'rxjs';
 })
 export class ProjectService {
   private apiUrl = 'http://localhost:3000/projects'; 
-  private ProjectAddedSubject = new Subject<void>();
   
   constructor(private http: HttpClient) { }
 
@@ -15,19 +14,8 @@ export class ProjectService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  getProject(id: string): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<any>(url);
-  }
-
   addProject(project: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, project).pipe(
-      tap(() => this.ProjectAddedSubject.next())
-    );
-  }
-
-  getProjectAddedObservable(): Observable<void> {
-    return this.ProjectAddedSubject.asObservable();
+    return this.http.post<any>(this.apiUrl, project)
   }
 
   updateProject(id: string, Project: any): Observable<any> {

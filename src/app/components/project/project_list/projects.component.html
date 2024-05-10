@@ -12,6 +12,13 @@
         </div>
   
         <div class="description">{{ project.description }}</div>
+
+        
+      <!-- Кнопки изменения и удаления -->
+      <div class="buttons">
+        <button (click)="editProject(project._id)">Изменить</button>
+        <button (click)="deleteProject(project._id)">Удалить</button>
+      </div>
       </div>
 
 

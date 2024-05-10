@@ -1,0 +1,6 @@
+<form (ngSubmit)="login(email.value, password.value)">
+    <input type="text" name="email" #email required>
+    <input type="password" name="password" #password required>
+    <button type="submit">Login</button>
+  </form>
+  <a href="/">Если вы не администратор, тогда вам сюда</a>
