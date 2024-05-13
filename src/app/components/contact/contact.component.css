@@ -44,10 +44,6 @@ textarea:hover {
   border-bottom: 2px solid #633761;
 }
 
-.between{
-  display: flex;
-  justify-content: space-between;
-}
 
 .between > div {
   width: 48%; 
@@ -88,10 +84,6 @@ button {
 
   .between {
     flex-direction: column;
-  }
-
-  .between > div {
-    width: 100%;
   }
 
   button {

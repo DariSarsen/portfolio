@@ -18,6 +18,11 @@ export class ProjectService {
     return this.http.post<any>(this.apiUrl, project)
   }
 
+  getProjectById(id: string): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<any>(url);
+  }  
+
   updateProject(id: string, Project: any): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.patch<any>(url, Project);

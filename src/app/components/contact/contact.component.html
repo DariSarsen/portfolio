@@ -1,28 +1,24 @@
 <h1>Let's talk</h1>
     <div class="contact">
-        <form action="server-side-script" method="POST">
-            <div class="input-label between">
+        <form (ngSubmit)="send(name.value, email.value, subject.value, message.value)" method="POST">
+            <div class="input-label">
                 <div>
-                    <label for="first-name">First Name*</label>
-                    <input type="text" id="first-name" required>
-                </div>
-                <div>
-                    <label for="last-name">Last Name*</label>
-                    <input type="text" id="last-name" required>
+                    <label for="">Name*</label>
+                    <input type="text" id="first-name" name="name" #name required>
                 </div>
                 
             </div> 
             <div class="input-label">
                 <label for="">Email*</label>
-                <input type="text" required>
+                <input type="text" required name="email" #email>
             </div> 
             <div class="input-label">
                 <label for="">Subject*</label>
-                <input type="text" required>
+                <input type="text" required name="subject" #subject>
             </div> 
             <div class="input-label">
                 <label for="">Message*</label>
-                <textarea rows="3" required></textarea>
+                <textarea rows="3" required name="message" #message></textarea>
             </div>  
 
             <button type="submit">SEND</button>

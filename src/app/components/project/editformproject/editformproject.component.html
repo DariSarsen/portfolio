@@ -1,29 +1,27 @@
-<!-- <h1>Edit Project</h1>
+<h1>Edit Project</h1>
 
-<form class="projects-edit-form">
+<form class="projects-edit-form" (ngSubmit)="updateThisProject()">
   <div class="section">
     <div class="form-group">
       <label for="projectName">Project Name:</label>
-      <input type="text" id="projectName" placeholder="Title" [(ngModel)]="editProject.title">
+      <input type="text" id="projectName" placeholder="Title" name="title" [(ngModel)]="editedProject.title" required>
     </div>
 
     <div class="form-group">
       <label for="projectShortDescription">Short Description:</label>
-      <input type="text" id="projectShortDescription" placeholder="Subtitle" [(ngModel)]="editedTask.subtitle">
+      <input type="text" id="projectShortDescription" placeholder="Subtitle" name="subtitle" [(ngModel)]="editedProject.subtitle" required>
     </div>
 
     <div class="form-group">
       <label for="projectDescription">Full Description:</label>
-      <textarea id="projectDescription" placeholder="Full Description" [(ngModel)]="editProject.description" rows="4" ></textarea>
+      <textarea id="projectDescription" placeholder="Full Description" name="description" [(ngModel)]="editedProject.description" rows="4" required></textarea>
     </div>
 
     <div class="form-group">
-      <label for="projectImage">Project Image:</label>
-      <input type="file" id="projectImage" name="projectImage" class="file-upload">
-      <img src="{{'assets/images/itlib.png'}}" alt="project image">
+      <label for="projectImage">Project Image: {{editedProject.imageUrls}}</label>
+      <input type="file" id="projectImage" name="images" class="file-upload" multiple (change)="onFileSelected($event)">
     </div>
 
     <button type="submit">Save Changes</button>
   </div>
 </form>
- -->
