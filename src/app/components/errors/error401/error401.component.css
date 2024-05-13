@@ -1,0 +1,22 @@
+h1 { font-size: 50px; }
+p { font-size: 18px; }
+article {text-align: left; width: 700px; margin: 110px auto; padding: 15px;}
+a { color: #dc8100; text-decoration: none; }
+a:hover { color: #333; text-decoration: none; }
+.main{
+    display: flex;
+    align-items: center;
+}
+
+img{width: 100%;}
+
+@media (max-width: 800px) {
+    h1 { font-size: 25px;  text-align: center; }
+    .main{display: block;}
+    .img{display: flex;}
+    article {display: block; width: 75%; margin: 10px auto; }
+    img{
+        width: 75%;
+        margin: auto;
+    }
+}

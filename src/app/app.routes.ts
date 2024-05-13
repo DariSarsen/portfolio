@@ -6,8 +6,13 @@ import {AddformprojectComponent} from './components/project/addformproject/addfo
 import {EditformprojectComponent} from './components/project/editformproject/editformproject.component';
 import {ResumeComponent} from './components/resume/resume.component';
 import {LoginComponent} from './components/login/login.component';
+import { Error404Component } from './components/errors/error404/error404.component';
 
 export const routes: Routes = [
+    { 
+        path: 'error', 
+        loadChildren: () => import('./error.routes').then(m => m.errorRoutes)
+    },
     { path: '', component: AboutMeComponent, title: 'Darina Sarsenova' },
     { path: 'contact', component: ContactComponent, title: 'Contact with me' },
     { path: 'projects', component: ProjectsComponent, title: 'Projects' },
@@ -15,5 +20,5 @@ export const routes: Routes = [
     { path: 'projects/edit/:projectId', component: EditformprojectComponent, title: 'Edit Project' },
     { path: 'resume', component: ResumeComponent, title: 'Resume' },
     { path: 'login', component: LoginComponent, title: 'Admin Register' },
-    { path: '**', component: AboutMeComponent, title: 'Darina Sarsenova' }, //PageNotFoundComponent
+    { path: '**', component: Error404Component, title: 'Not Found' },
 ];
