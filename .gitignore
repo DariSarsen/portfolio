@@ -1,6 +1,6 @@
 *.log
 .angular/
 .vscode/
-.dist/
+dist/
 
 node_modules/
