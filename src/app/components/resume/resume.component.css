@@ -37,6 +37,10 @@ p{
   background-color: white;
   margin-bottom: 50px;
   padding: 30px 35px;
+  transition: all 0.5s ease-in-out; 
+}
+.section:hover{
+  transform: scale(1.03);
 }
 
 .info{

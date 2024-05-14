@@ -3,7 +3,7 @@
 
 body{
     font-family: "Quicksand", Calibri;
-    background: #FEE6C4; 
+    background: linear-gradient(rgb(12, 129, 114), white); 
     margin: 0;
 }
 
