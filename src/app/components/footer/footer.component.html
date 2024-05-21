@@ -2,8 +2,9 @@
     
     <div class="contact-info">
         <div>
-            <p>&copy; 2024 by Darina Sarsenova</p>
+            <p>&copy; 2024 by <a href="/login">Darina Sarsenova</a></p>
         </div>
+        <button *ngIf="isLoggedIn$ | async" (click)="logout()">Выйти</button>
         <div class="contact-info">
             <div class="phone">
                 <span>Call</span>
@@ -15,10 +16,10 @@
             </div>
             <div class="social-media">
                 <span>Follow</span>
-                <a href="#"><img src="{{'assets/images/linkedIn-icon.png'}}" alt="LinkedIn"></a>
-                    <a href="#"><img src="{{'assets/images/github-icon.png'}}" alt="GitHub"></a>
-                    <a href="#"><img src="{{'assets/images/instagram-icon.png'}}" alt="Instagram"></a>
-                    <a href="#"><img src="{{'assets/images/facebook-icon.png'}}" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/in/darina-sarsenova"><img src="{{'assets/images/linkedIn-icon.png'}}" alt="LinkedIn"></a>
+                <a href="https://github.com/DariSarsen"><img src="{{'assets/images/github-icon.png'}}" alt="GitHub"></a>
+                <a href="https://www.instagram.com/dari_sarsen"><img src="{{'assets/images/instagram-icon.png'}}" alt="Instagram"></a>
+                <a href="https://www.facebook.com/share/h7hjG6UUvpYzfHDt/?mibextid=qi2Omg "><img src="{{'assets/images/facebook-icon.png'}}" alt="Facebook"></a>
             </div>
     
         </div>

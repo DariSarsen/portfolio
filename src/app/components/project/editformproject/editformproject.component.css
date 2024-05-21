@@ -1,6 +1,7 @@
 h1 {
     margin: 50px 0;
     text-align: center;
+    color: #fff;
 }
 
 .projects-edit-form {
@@ -34,11 +35,17 @@ h1 {
     border: none;
     outline: 0;
     border-bottom: 2px solid #bebebe;
+    transition: all 0.5s ease-in-out;
 }
 
 .form-group input[type="text"]:hover,
 .form-group textarea:hover {
-    border-bottom: 2px solid #633761;
+    border-bottom: 2px solid rgb(12, 129, 114);
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-bottom: 2px solid rgb(12, 129, 114);
 }
 
 .form-group textarea {
@@ -46,17 +53,18 @@ h1 {
 }
 
 button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: rgb(14, 175, 154);
     border-radius: 20px;
     width: 100%;
     padding: 10px;
     border: none;
     color: white;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: rgb(12, 129, 114);
 }
 
 .form-group img {
@@ -71,9 +79,6 @@ button[type="submit"]:hover {
     width: calc(100% - 20px);
     padding: 6px 12px;
     cursor: pointer;
-    border: none;
-    border-bottom: 2px solid #bebebe;
-    border-radius: 4px;
     margin-top: 10px;
     font-family: "Quicksand", Calibri;
 }

@@ -1,6 +1,19 @@
-<form (ngSubmit)="login(email.value, password.value)">
-    <input type="text" name="email" #email required>
-    <input type="password" name="password" #password required>
-    <button type="submit">Login</button>
-  </form>
-  <a href="/">Если вы не администратор, тогда вам сюда</a>
+
+<div class="card">
+  <h1>Authorization</h1>
+    <form (ngSubmit)="login(email.value, password.value)" method="POST">
+        <div class="input-label">
+            <label for="">Email</label>
+            <input type="text" required name="email" #email>
+        </div> 
+        <div class="input-label">
+            <label for="">Password</label>
+            <input type="password" name="password" #password required>
+        </div>
+        <button type="submit">LOGIN</button>
+    </form>
+    <div class="link">
+        <a href="/">Если вы не администратор, тогда вам сюда</a>
+    </div>
+</div>
+

@@ -1,94 +1,103 @@
 h1{
 margin: 50px 0;
 text-align: center;
+color: #fff;
 }
 .contact {
-  background: #FFF;
-  color: #000;
-  max-width: 600px;
-  margin: auto;
-  margin-bottom: 70px;
-  padding: 40px 40px 80px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+background: #FFF;
+color: #000;
+max-width: 600px;
+margin: auto;
+margin-bottom: 70px;
+padding: 40px 40px 80px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .contact form {
-  margin-top: 20px;
-  padding: 10px;
+margin-top: 20px;
+padding: 10px;
 }
 
 .input-label {
-  margin-bottom: 35px;
+margin-bottom: 35px;
 }
 
 label {
-  display: block; 
-  margin-bottom: 5px; 
-  font-size: small;
+display: block; 
+margin-bottom: 5px; 
+font-size: small;
 }
 
 input,
 textarea {
-  font-family: "Quicksand", Calibri;
-  width: calc(100% - 20px);
-  border-radius: 4px;
-  padding: 10px;
-  display: block;
-  border: none;
-  outline: 0;
-  border-bottom: 2px solid #bebebe;
+font-family: "Quicksand", Calibri;
+width: calc(100% - 20px);
+border-radius: 4px;
+padding: 10px;
+display: block;
+border: none;
+outline: 0;
+border-bottom: 2px solid #bebebe;
+transition: all 0.5s ease-in-out;
+
 }
 
 input:hover,
 textarea:hover {
-  border-bottom: 2px solid #633761;
+border-bottom: 2px solid rgb(12, 129, 114);
 }
 
+input:focus,
+textarea:focus {
+border-bottom: 2px solid rgb(12, 129, 114);
+}
 
 .between > div {
-  width: 48%; 
+width: 48%; 
 }
 
 textarea {
-  width: calc(100% - 20px); 
-  padding: 10px;
-  resize: vertical; 
+width: calc(100% - 20px); 
+padding: 10px;
+resize: vertical; 
 }
 
 button {
-  border-radius: 20px;
-  width: 25%;
-  padding: 10px;
+border-radius: 20px;
+width: 100%;
+padding: 10px;
+transition: all 0.5s ease-in-out;
+
 }
 
 @media (max-width: 600px) {
-  h1 {
-    margin: 30px 0;
-    font-size: 24px;
-  }
+h1 {
+  margin: 30px 0;
+  font-size: 24px;
+}
 
-  .contact {
-    max-width: 100%;
-    padding: 20px 20px 40px;
-    margin: 10px;
-    margin-bottom: 20px;
-  }
+.contact {
+  max-width: 100%;
+  padding: 20px 20px 40px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
 
-  .input-label {
-    margin-bottom: 20px;
-  }
+.input-label {
+  margin-bottom: 20px;
+}
 
-  label {
-    font-size: smaller;
-  }
+label {
+  font-size: smaller;
+}
 
-  .between {
-    flex-direction: column;
-  }
+.between {
+  flex-direction: column;
+}
 
-  button {
-    width: 50%;
-    padding: 10px;
-    margin-top: 20px;
-  }
+button {
+  width: 50%;
+  padding: 10px;
+  margin-top: 20px;
+}
 }

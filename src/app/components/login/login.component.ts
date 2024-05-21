@@ -23,12 +23,13 @@ export class LoginComponent {
         next: (response) => {
           sessionStorage.setItem('token', response.token);
           this.toastr.success(response.message);
-          this.router.navigate(['/projects']);
+          window.location.reload();
         },
         error: (error) => {
           this.toastr.error(error.error.message, 'Ошибка при аутентификации');
           console.error('Ошибка при аутентификации:', error);
         }
       });
+      this.router.navigate(['/']);
   }
 }

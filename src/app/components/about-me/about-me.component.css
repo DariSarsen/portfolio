@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #FEE6C4 0%, #FEE6C4 40%, #ffffff 40%, #ffffff 100%);
+    background: linear-gradient(to right, rgb(13, 146, 128) 0%, rgb(154, 253, 240) 40%, #ffffff 40%, #ffffff 100%);
     padding: 100px 0;
     width: 100%;
 }
@@ -16,7 +16,7 @@
 }
 
 .left {
-    background-color: #F4ECE6;
+    background-color: rgb(207 237 233);
     text-align: center;
     box-shadow: -10px 10px 10px rgba(129, 128, 128, 0.4);
     margin: 10px;
@@ -41,7 +41,7 @@
 }
 
 .line {
-    background-color: #633761;
+    background-color: rgb(12, 129, 114);
     height: 2.5px;
     width: 50px;
     margin-bottom: 20px;
@@ -101,19 +101,28 @@ a img {
     margin: 5px;
     padding: 10px 20px;
     border-radius: 24px;
-    border: 1px solid black;
+    border: 1px solid rgb(12, 129, 114);
     background-color: white;
     color: black;
     cursor: pointer;
+    transition: all 0.5s ease-in-out
 }
 
 .buttons a:active {
-    background-color: #633761;
+    background-color: rgb(12, 129, 114);
+    color: white;
+}
+.buttons a:hover {
+    background-color: rgb(28, 138, 127);
     color: white;
 }
 
 /* Адаптивный дизайн для мобильных устройств */
 @media (max-width: 768px) {
+    .background {
+        background: none;
+    }    
+
     .hello {
         text-align: center;
         font-size: 36px;

@@ -2,6 +2,9 @@
 
 
 <div class="projects">
+  <a href="/projects/addnew" class="addBtn" *ngIf="isLoggedIn$ | async">Add New Project</a>
+
+
   <div class="section" *ngFor="let project of projects">
       <div class="info">
         <div class="project-name">
@@ -15,10 +18,10 @@
 
         
         <!-- Кнопки изменения и удаления -->
-        <div class="buttons">
+        <div class="buttons" *ngIf="isLoggedIn$ | async">
           <button (click)="editProject(project._id)">Изменить</button>
           <button (click)="deleteProject(project._id)">Удалить</button>
-      </div>
+        </div>
       </div>
 
 

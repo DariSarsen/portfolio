@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-projects',
@@ -17,12 +19,17 @@ import { Router } from '@angular/router';
 export class ProjectsComponent implements OnInit {
   projects: any | null = null;
   slideIndex = 1;
+  isLoggedIn$: Observable<boolean>;
 
 
-  constructor(private projectService: ProjectService, private toastr: ToastrService, private router: Router) { }
+  constructor(private projectService: ProjectService, private toastr: ToastrService, private router: Router, private authService: AuthService) {
+    this.isLoggedIn$ = this.authService.isLoggedIn();
+    console.log("isLoggedIn$", this.isLoggedIn$)
+  }
   
   ngOnInit(): void {
     this.getProjects();
+    
   }
 
 
